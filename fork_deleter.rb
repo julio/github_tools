@@ -3,10 +3,9 @@ require 'octokit'
 module GitHub
   class ForkDeleter
     def initialize
-      # get a token from:
-      #   https://github.com/settings/tokens
-      #   Generate new token
-      #   Give it delete_repo permissions
+      # Get a token from https://github.com/settings/tokens
+      # Generate new token
+      # Give it delete_repo permissions
       @client = Octokit::Client.new(:access_token => personal_access_token)
       @client.auto_paginate = true # get them all in one call
     end
