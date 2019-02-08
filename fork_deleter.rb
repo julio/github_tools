@@ -29,7 +29,7 @@ module GitHub
     def delete_fork!(repo)
       raise "#{repo.name} is a not a fork!" unless fork?(repo)
 
-      @client.delete_repository("julio/#{repo.name}")
+      @client.delete_repository("#{@client.user.login}/#{repo.name}")
     end
 
     def fork?(repo)
